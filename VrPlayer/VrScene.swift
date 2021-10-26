@@ -66,7 +66,7 @@ class VrScene: SCNScene {
     
     /// カメラを回転させる
     func drag(value: DragGesture.Value) {
-        // ドラッグの移動値を取得
+        // ドラッグの移動量を取得
         if currentDragVlaue?.startLocation != value.startLocation { currentDragVlaue = nil }
         let dragX = value.location.x - (currentDragVlaue?.location.x ?? value.startLocation.x)
         let dragY = value.location.y - (currentDragVlaue?.location.y ?? value.startLocation.y)
@@ -80,7 +80,7 @@ class VrScene: SCNScene {
     }
     
     
-    /// スクロール幅のxy移動値を角度に変換
+    /// スクロール幅のxy移動量を角度に変換
     private func cameraDragPoint(dragOffset: CGPoint) -> CGPoint {
         let angle = CGFloat(180)
         let x = (dragOffset.x / UIScreen.main.bounds.width) * angle
@@ -92,9 +92,9 @@ class VrScene: SCNScene {
     private func rotateCamera(q: SCNQuaternion, point: CGPoint) -> SCNQuaternion {
         // カメラの元々の姿勢
         let current = GLKQuaternionMake(q.x, q.y, q.z, q.w)
-        // y軸をドラッグのx移動値まで回転させる
+        // y軸をドラッグのx移動量まで回転させる
         let width = GLKQuaternionMakeWithAngleAndAxis(GLKMathDegreesToRadians(Float(point.x)), 0, 1, 0)
-        // x軸をドラッグのy移動値まで回転させる
+        // x軸をドラッグのy移動量まで回転させる
         let height = GLKQuaternionMakeWithAngleAndAxis(GLKMathDegreesToRadians(Float(point.y)), 1, 0, 0)
         // 新しいカメラの姿勢を設定
         let qp  = GLKQuaternionMultiply(GLKQuaternionMultiply(width, current), height)
