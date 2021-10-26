@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         SceneView(scene: vrScene)
             .gesture(
-                DragGesture(minimumDistance: 0)
+                DragGesture()
                     .onChanged(vrScene.drag(value:))
             )
     }

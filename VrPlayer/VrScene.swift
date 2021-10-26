@@ -13,8 +13,13 @@ import CoreMotion
 
 /// VR動画を表示するクラス
 class VrScene: SCNScene {
+    /// 動画をループ再生する
     private var playerLooper: AVPlayerLooper?
+
+    /// VR動画内での視点となるカメラ
     private let cameraNode: SCNNode
+
+    /// 現在のカメラの位置
     private var currentDragVlaue: DragGesture.Value?
     
     override init() {
@@ -26,16 +31,17 @@ class VrScene: SCNScene {
         // カメラの向きが後ほど追加する動画の中央に向くように変更
         cameraNode.orientation = .init(0, 1, 0, 0)
         self.rootNode.addChildNode(cameraNode)
-        
+
         // ループ動画プレイヤーの生成
-        let asset = AVAsset(url: URL(string: "https://s3-ap-northeast-1.amazonaws.com/panora-t-download/wp-content/uploads/2014/11/20141103_nogawa.mp4")!)
+        let urlPath = Bundle.main.path(forResource: "saionsquare_001", ofType: "mp4")!
+        let asset = AVAsset(url: URL(fileURLWithPath: urlPath))
         let playerItem = AVPlayerItem(asset: asset)
         let queuePlayer = AVQueuePlayer(playerItem: playerItem)
         queuePlayer.isMuted = true
         playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
         
         // SKSceneを生成する
-        let videoScene = SKScene(size: .init(width: 1920, height: 960))
+        let videoScene = SKScene(size: .init(width: 1920, height: 1080))
         // AVPlayerからSKVideoNodeの生成する
         let videoNode = SKVideoNode(avPlayer: queuePlayer)
         // シーンと同じサイズとし、中央に配置する
@@ -51,7 +57,6 @@ class VrScene: SCNScene {
         sphere.firstMaterial?.isDoubleSided = true
         sphere.firstMaterial?.diffuse.contents = videoScene
         let sphereNode = SCNNode(geometry: sphere)
-        sphereNode.position = SCNVector3Zero
         self.rootNode.addChildNode(sphereNode)
     }
     
@@ -77,9 +82,9 @@ class VrScene: SCNScene {
     
     /// スクロール幅のxy移動値を角度に変換
     private func cameraDragPoint(dragOffset: CGPoint) -> CGPoint {
-        let radian = CGFloat(180)
-        let x = (dragOffset.x / UIScreen.main.bounds.width) * radian
-        let y = (dragOffset.y / UIScreen.main.bounds.height) * radian * -1
+        let angle = CGFloat(180)
+        let x = (dragOffset.x / UIScreen.main.bounds.width) * angle
+        let y = (dragOffset.y / UIScreen.main.bounds.height) * angle
         return .init(x: x, y: y)
     }
     

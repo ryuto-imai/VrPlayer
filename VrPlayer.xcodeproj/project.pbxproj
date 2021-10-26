@@ -13,8 +13,8 @@
 		01D07CA825EB6CCF00BBA5DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D07CA725EB6CCF00BBA5DB /* ContentView.swift */; };
 		01D07CAD25EB6CD000BBA5DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01D07CAC25EB6CD000BBA5DB /* Preview Assets.xcassets */; };
 		01D07CB025EB6CD000BBA5DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D07CAE25EB6CD000BBA5DB /* LaunchScreen.storyboard */; };
-		01D07CBE25EB9E5400BBA5DB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D07CBD25EB9E5400BBA5DB /* AVKit.framework */; };
 		01D07CC125EBA4E900BBA5DB /* VrScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D07CC025EBA4E900BBA5DB /* VrScene.swift */; };
+		2B4BCFAB27215157007E69D7 /* saionsquare_001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4BCFAA27215149007E69D7 /* saionsquare_001.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		01D07CAC25EB6CD000BBA5DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		01D07CAF25EB6CD000BBA5DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01D07CB125EB6CD000BBA5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01D07CBD25EB9E5400BBA5DB /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		01D07CC025EBA4E900BBA5DB /* VrScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VrScene.swift; sourceTree = "<group>"; };
+		2B4BCFAA27215149007E69D7 /* saionsquare_001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = saionsquare_001.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D07CBE25EB9E5400BBA5DB /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +46,6 @@
 			children = (
 				01D07CA225EB6CCF00BBA5DB /* VrPlayer */,
 				01D07CA125EB6CCF00BBA5DB /* Products */,
-				01D07CBC25EB9E5400BBA5DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +67,7 @@
 				01014E5725F15532005626F4 /* Assets.xcassets */,
 				01D07CAE25EB6CD000BBA5DB /* LaunchScreen.storyboard */,
 				01D07CB125EB6CD000BBA5DB /* Info.plist */,
+				2B4BCFAA27215149007E69D7 /* saionsquare_001.mp4 */,
 				01D07CAB25EB6CD000BBA5DB /* Preview Content */,
 			);
 			path = VrPlayer;
@@ -80,14 +79,6 @@
 				01D07CAC25EB6CD000BBA5DB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		01D07CBC25EB9E5400BBA5DB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				01D07CBD25EB9E5400BBA5DB /* AVKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4BCFAB27215157007E69D7 /* saionsquare_001.mp4 in Resources */,
 				01D07CB025EB6CD000BBA5DB /* LaunchScreen.storyboard in Resources */,
 				01014E5825F15532005626F4 /* Assets.xcassets in Resources */,
 				01D07CAD25EB6CD000BBA5DB /* Preview Assets.xcassets in Resources */,
